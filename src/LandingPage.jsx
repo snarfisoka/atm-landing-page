@@ -4,6 +4,8 @@ import './LandingPage.css';
 import logo from './assets/logo.png';
 import heroImage from './assets/hero.jpg';
 
+
+
 const LandingPage = () => {
     const [formData, setFormData] = useState({name: '', email: '', message: ''});
 
@@ -13,19 +15,19 @@ const LandingPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
+        
         emailjs
             .send(
-                'service_qkanjfj',
-                'template_xa6l1od',
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 formData,
-                'uzX-zoCKfpvbynS5v'
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             )
             .then(
-                (result) => {
+                () => {
                     alert('Message sent successfully!');
                     setFormData({name: '', email: '', message: ''});
-                    console.log(result)
                 },
                 (error) => {
                     alert('Failed to send message. Please try again.');
