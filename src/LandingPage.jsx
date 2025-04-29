@@ -87,6 +87,7 @@ const LandingPage = () => {
             </section>
 
             <footer>
+                <p><strong>Tel: 09212726220 | 09602565396 | 09065884242</strong></p>
                 <p>Trusted by contractors</p>
             </footer>
         </div>
